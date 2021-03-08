@@ -1,0 +1,32 @@
+backend:
+  name: test-repo
+  branch: main
+  commit_messages:
+    create: 'Create {{collection}} “{{slug}}”'
+    update: 'Update {{collection}} “{{slug}}”'
+    delete: 'Delete {{collection}} “{{slug}}”'
+    uploadMedia: '[skip ci] Upload “{{path}}”'
+    deleteMedia: '[skip ci] Delete “{{path}}”'
+
+media_folder: static/images/CMS_uploads # Media files will be stored in the repo under static/images/uploads
+public_folder: /images # The src attribute for uploaded media will begin with /images/uploads
+
+locale: 'es'
+
+slug:
+  sanitize_replacement: '_'
+
+collections:
+  - name: 'menu'
+    label: 'Platillo de Menu'
+    description: 'Aquí puedes agregar nuevos items a tu menú, ó modificar la información de items existentes :)'
+    create: true
+    folder: 'src/markdown/menu'
+    fields:
+      - { name: 'isFeatured', label: '¿Platillo Principal o Destacado?', widget: 'boolean', default: false }
+      - { name: 'title', label: 'Nombre de Platillo', widget: 'string' }
+      - { name: 'description', label 'Descripción', widget: 'string', required: false, hint: 'Aquí puedes una pequeña descripción para mejorar los resultados SEO (para búsquedas en Google...)' }
+      - { name: 'mainImage', label: 'Foto Principal de Platillo', widget: 'image', hint: 'Agrega la "foto de perfil" del platillo para que sea la primera imagen a mostrar' }
+      - { name: 'imageGallery', label: 'Galería de Fotos', default: [], required: false, hint: 'Si lo deseas, aquí puedes agregar más fotos para mostrar el item del menú', widget: 'list', field: { name: 'image', label: 'Imagen', widget: 'image' }}
+      - { name: 'body', label: 'Acerca del Platillo', widget: 'markdown', required: false, hint: 'Esto es opcional. Aquí puedes agregar información nutrimental ó que agregue valor al platillo' }
+      - { name: 'date', label: 'Fecha de Publicación', widget: 'datetime', hint: '¡No tocar! Contiene información acerca de la fecha de creación' }
