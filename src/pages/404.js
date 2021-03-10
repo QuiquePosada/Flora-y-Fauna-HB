@@ -3,16 +3,29 @@ import React from 'react'
 import { StaticImage } from "gatsby-plugin-image";
 // import { useStaticQuery, graphql } from 'gatsby'
 import Layout from '../components/layout'
-// import SEO from '../components/seo'
+import SEO from '../components/seo'
+import RickRoll from '../images/rickroll.gif'
 
 const NotFoundPage = () => {
     return (
         <Layout>
-        {/* <SEO title="404: Página No Encontrada" /> */}
+            <SEO title="404: Página No Encontrada" />
         {/* <h1>404: Not Found</h1>
         <p>You just hit a route that doesn&#39;t exist... the sadness.</p> */}
-        
-        <div>
+            <div style={{width: '100%', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}} className="overlay bgImgContainer">
+                <h1 style={{color: '#BDD9A9'}}>404: Pagina No Encontrada</h1>
+                <h2 style={{color: '#F28095', textAlign: 'center'}}>Te perdiste, así que disfruta un poco de este <a className="link" href="https://www.youtube.com/embed/bxqLsrlakK8?autoplay=1&loop=1&controls=0&disablekb=1">clasico</a></h2>
+                <div style={{width: '12em'}}>
+                    <StaticImage
+                        src="../images/footer-logo.jpg"
+                        imgStyle={{borderRadius: '100%'}}
+                        style={{borderRadius: '100%'}}
+                        alt="rickRollLogo"
+                    />
+                </div>
+                <img src={RickRoll} className="bgImg" alt="ClassicRickRoll" />
+            </div>
+        {/* <div>
             <iframe 
                 src="https://www.youtube.com/embed/bxqLsrlakK8?autoplay=1&loop=1&controls=0&disablekb=1"
                 wmode="Opaque"
@@ -32,17 +45,8 @@ const NotFoundPage = () => {
                     />
                 </div>
             </div>
-        </div>
-            {/* <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/Y8Wp3dafaMQ"
-        srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/Y8Wp3dafaMQ?autoplay=1><img src=https://img.youtube.com/vi/Y8Wp3dafaMQ/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>"
-        frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        title="The Dark Knight Rises: What Went Wrong? – Wisecrack Edition"
-        ></iframe> */}
+        </div> */}
+
     </Layout>
     )
 }

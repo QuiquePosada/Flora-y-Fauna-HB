@@ -19,19 +19,11 @@ module.exports = {
         icon: `static/icon.jpg`, // This path is relative to the root of the site.
       }
     },
-    
     `gatsby-plugin-image`,
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        icon: `src/images/icon.png`,
-      },
-    },
-    `gatsby-plugin-mdx`,
+    // `gatsby-plugin-mdx`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -63,6 +55,20 @@ module.exports = {
         path: `./src/markdown/`,
       },
       __key: `markdown`,
+    },
+    // for markdown and markdown images
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-relative-images',
+            options: {
+              name: 'imagesUploaded',
+            }
+          }
+        ]
+      }
     },
     {
       resolve: `gatsby-plugin-netlify-cms`,

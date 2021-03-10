@@ -10,12 +10,16 @@ import Footer from './footer'
 
 const sectionData = [
   {
-      label: "Nosotros",
-      href: "/#aboutUs",
+    //   label: "Nosotros",
+    //   href: "/#aboutUs",
+  },
+  {
+      label: "Menu-item test",
+      href: "/menu-item",
   },
   {
       label: "Menú",
-      href: "/404",
+      href: "/menu",
   },
 //   {
 //       label: "Contáctanos",

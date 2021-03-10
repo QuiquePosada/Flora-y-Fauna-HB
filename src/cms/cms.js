@@ -1,5 +1,5 @@
-// import CMS from 'netlify-cms-app'
-// import { es } from 'netlify-cms-locales'
+import CMS from 'netlify-cms-app'
+import { es } from 'netlify-cms-locales'
 
-// // Register spanish as language for admin ui
-// CMS.registerLocale('es',es)
+// Register spanish as language for admin ui
+CMS.registerLocale('es',es)
